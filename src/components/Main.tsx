@@ -1,13 +1,23 @@
-import { Box, Flex, useColorModeValue, Text, Heading, IconButton, Image  } from '@chakra-ui/react'
+import { Box, Flex, useColorModeValue, Text, Heading, IconButton, Image } from '@chakra-ui/react'
 import { TiSocialLinkedin } from "react-icons/ti";
 import { VscGithubInverted } from "react-icons/vsc";
 import { BiLogoGmail } from "react-icons/bi";
 import { BsInstagram } from "react-icons/bs";
-import  mimoji from "../public/assets/mimojis/mimoji3.png"
+import mimoji from "../public/assets/mimojis/mimoji3.png"
+import { motion } from "framer-motion";
 
 export const Main = () => {
 
   const colorText = useColorModeValue("gray.600", "gray.400");
+
+  const motionVariants = {
+    left: {
+      rotate: -4, // Grau de rotação para a esquerda
+    },
+    right: {
+      rotate: 4, // Grau de rotação para a direita
+    },
+  };
 
 
   return (
@@ -76,7 +86,20 @@ export const Main = () => {
               _hover={{ boxShadow: "xl", color: "purpleColor", transform: "scale(1.1)" }}
             />
           </Flex>
-          <Image src={mimoji.src} alt="Logo GustavoNeves" width={300} ml={'auto'} />
+          {/* Imagem com o efeito de balanço */}
+            <motion.img
+              src={mimoji.src}
+              alt="Logo GustavoNeves"
+              width={300}
+              variants={motionVariants}
+              animate="left" // Iniciar animação para a esquerda
+              transition={{
+                repeat: Infinity, // Repetição infinita
+                repeatType: "mirror", // Inverte a animação no loop
+                duration: 2, // Duração de cada ciclo de animação (2 segundos)
+                ease: "easeInOut", // Curva de animação suave
+              }}
+            />
         </Box>
       </Flex >
     </Flex >
