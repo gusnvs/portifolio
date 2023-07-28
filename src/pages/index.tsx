@@ -14,6 +14,7 @@ import { DarkModeSwitch } from '../components/DarkModeSwitch'
 
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
+import { Main } from '../components/Main'
 
 const Index = () => (
   <>
@@ -23,6 +24,7 @@ const Index = () => (
     {/* <DarkModeSwitch /> */}
 
     <Navbar />
+    <Main />
   </>
 )
 

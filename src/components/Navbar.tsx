@@ -24,9 +24,9 @@ const Navbar = () => {
         setNav(!nav);
     }
 
-    const closeNav = () => {
-        setNav(false);
-    };
+    // const closeNav = () => {
+    //     setNav(false);
+    // };
 
     return (
         <Box w={'full'} position={'fixed'} h={'100px'} shadow={'xl'} zIndex={'100'}>
@@ -34,20 +34,28 @@ const Navbar = () => {
                 <Image src={logoGN.src} alt="Logo GustavoNeves" width={70} height={50} />
                 {isLargerThanMd ? (
                     <Flex alignItems={'center'} gap={10}>
-                        <List display={'flex'} gap={10} style={{ listStyle: 'none' }}>
-                            <ListItem>
+                        <List
+                            display={'flex'}
+                            gap={10}
+                            style={{ listStyle: 'none' }}
+                            letterSpacing={2}
+                            textTransform="uppercase"
+                            fontWeight={'normal'}
+                            fontSize={'14px'}
+                        >
+                            <ListItem _hover={{ color: "purpleColor", transition: "ease-in 100ms" }} >
                                 <Link href='/'>Home</Link>
-                            </ListItem>
-                            <ListItem>
+                            </ListItem >
+                            <ListItem _hover={{ color: "purpleColor", transition: "ease-in 100ms" }} >
                                 <Link href='/'>Sobre mim</Link>
                             </ListItem>
-                            <ListItem>
+                            <ListItem _hover={{ color: "purpleColor", transition: "ease-in 100ms" }} >
                                 <Link href='/'>Habilidades</Link>
-                            </ListItem>
-                            <ListItem>
+                            </ListItem >
+                            <ListItem _hover={{ color: "purpleColor", transition: "ease-in 100ms" }}>
                                 <Link href='/'>Projetos</Link>
                             </ListItem>
-                            <ListItem>
+                            <ListItem _hover={{ color: "purpleColor", transition: "ease-in 100ms" }}>
                                 <Link href='/'>Contato</Link>
                             </ListItem>
                         </List>
@@ -66,6 +74,9 @@ const Navbar = () => {
                 )}
             </Flex>
 
+
+            {/* Mobile version nav */}
+
             <Box
                 position="fixed"
                 left="0"
@@ -74,19 +85,18 @@ const Navbar = () => {
                 h="full"
                 bg="blackAlpha.600"
                 display={nav ? "block" : "none"}
-                onClick={closeNav}  // Controla a visibilidade da camada escura de fundo
             >
                 <MotionBox
                     position="fixed"
                     left="0"
                     top="0"
-                    w={["75%", "60%", "45%"]} // Responsividade usando array para diferentes larguras em diferentes breakpoints
+                    w={["75%", "60%", "45%"]}
                     h="100vh"
                     bg={bgColor}
                     p={10}
-                    initial={{ x: "-100%" }} // Posição inicial do menu lateral
-                    animate={{ x: nav ? "0%" : "-100%" }} // Animação para mostrar/ocultar o menu lateral
-                    transition={{ ease: "easeIn", duration: 0.5 }} // Efeito de transição
+                    initial={{ x: "-100%" }}
+                    animate={{ x: nav ? "0%" : "-100%" }}
+                    transition={{ ease: "easeIn", duration: 0.5 }}
                 >
                     <Box>
                         <Flex w="full" alignItems={'center'} justifyContent={'space-between'}  >
@@ -99,32 +109,32 @@ const Navbar = () => {
                                 boxShadow="md"
                                 p={3}
                                 cursor="pointer"
-                                _hover={{ boxShadow: "xl", color: "ofColor" }}
+                                _hover={{ boxShadow: "xl", color: "purpleColor" }}
                                 onClick={handleNav}
                             />
                         </Flex>
                         <Text borderBottom={'solid 1px #D2D4D7'} my={4} py={4} >Vamos juntos criar uma solução inovadora!</Text>
                         <Flex >
                             <List flexDir="column" display={'flex'} py={4} my={4} gap={10} style={{ listStyle: 'none' }} textTransform="uppercase">
-                                <ListItem _hover={{ color: "ofColor", transition: "ease-in 100ms" }} >
+                                <ListItem _hover={{ color: "purpleColor", transition: "ease-in 100ms" }} >
                                     <Link href='/'>Home</Link>
                                 </ListItem>
-                                <ListItem _hover={{ color: "ofColor", transition: "ease-in 100ms" }} >
+                                <ListItem _hover={{ color: "purpleColor", transition: "ease-in 100ms" }} >
                                     <Link href='/'>Sobre mim</Link>
                                 </ListItem>
-                                <ListItem _hover={{ color: "ofColor", transition: "ease-in 100ms" }} >
+                                <ListItem _hover={{ color: "purpleColor", transition: "ease-in 100ms" }} >
                                     <Link href='/'>Habilidades</Link>
                                 </ListItem>
-                                <ListItem _hover={{ color: "ofColor", transition: "ease-in 100ms" }} >
+                                <ListItem _hover={{ color: "purpleColor", transition: "ease-in 100ms" }} >
                                     <Link href='/'>Projetos</Link>
                                 </ListItem>
-                                <ListItem _hover={{ color: "ofColor", transition: "ease-in 100ms" }} >
+                                <ListItem _hover={{ color: "purpleColor", transition: "ease-in 100ms" }} >
                                     <Link href='/'>Contato</Link>
                                 </ListItem>
                             </List>
                         </Flex>
                         <Box>
-                            <Text textTransform="uppercase" fontWeight={'light'} color={"ofColor"} my={4} py={4} >Entre em contato comigo</Text>
+                            <Text letterSpacing={2} textTransform="uppercase" fontWeight={'normal'} color={"purpleColor"} my={4} py={4} >Entre em contato comigo</Text>
                             <Flex alignItems={'center'} justifyContent={'space-between'} my={4} w="full" width={{ base: "full", sm: "80%" }} flexWrap={{ base: "wrap", md: "nowrap" }}>
                                 <IconButton
                                     as="button"
@@ -134,7 +144,7 @@ const Navbar = () => {
                                     boxShadow="md"
                                     p={3}
                                     cursor="pointer"
-                                    _hover={{ boxShadow: "xl", color: "ofColor" }}
+                                    _hover={{ boxShadow: "xl", color: "purpleColor" }}
                                 />
                                 <IconButton
                                     as="button"
@@ -144,7 +154,7 @@ const Navbar = () => {
                                     boxShadow="md"
                                     p={3}
                                     cursor="pointer"
-                                    _hover={{ boxShadow: "xl", color: "ofColor" }}
+                                    _hover={{ boxShadow: "xl", color: "purpleColor" }}
                                 />
                                 <IconButton
                                     as="button"
@@ -154,7 +164,7 @@ const Navbar = () => {
                                     boxShadow="md"
                                     p={3}
                                     cursor="pointer"
-                                    _hover={{ boxShadow: "xl", color: "ofColor" }}
+                                    _hover={{ boxShadow: "xl", color: "purpleColor" }}
                                 />
                                 <IconButton
                                     as="button"
@@ -164,7 +174,7 @@ const Navbar = () => {
                                     boxShadow="md"
                                     p={3}
                                     cursor="pointer"
-                                    _hover={{ boxShadow: "xl", color: "ofColor" }}
+                                    _hover={{ boxShadow: "xl", color: "purpleColor" }}
                                 />
                             </Flex>
                         </Box>

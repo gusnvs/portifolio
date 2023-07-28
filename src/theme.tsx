@@ -54,7 +54,8 @@ const theme = extendTheme({
     }),
   },
   colors: {
-    ofColor: '#FF680B'
+    ofColor: '#FF680B',
+    purpleColor: "#5651E5"
   },
   fonts,
   breakpoints,
