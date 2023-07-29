@@ -5,6 +5,8 @@ import { BiLogoGmail } from "react-icons/bi";
 import { BsInstagram } from "react-icons/bs";
 import mimoji from "../public/assets/mimojis/mimoji3.png"
 import { motion } from "framer-motion";
+import { ParticlesDesign } from './ParticlesDesign';
+import { ScrollDown } from './ScrollDown';
 
 export const Main = () => {
 
@@ -12,18 +14,19 @@ export const Main = () => {
 
   const motionVariants = {
     left: {
-      rotate: -4, // Grau de rotação para a esquerda
+      rotate: -10, // Grau de rotação para a esquerda
     },
     right: {
-      rotate: 4, // Grau de rotação para a direita
+      rotate: 10, // Grau de rotação para a direita
     },
   };
 
 
   return (
-    <Flex h="100vh" textAlign="center" alignItems="center">
-      <Flex maxW="1240px" w="full" mx="auto" p={2} justifyContent="center">
+    <Flex h="100vh" textAlign="center" alignItems="center" >
+      <Flex maxW="1240px" w="full" mx="auto" p={2} justifyContent="center" flexDir={'column'} >
         <Box >
+          <ParticlesDesign />
           <Text letterSpacing={2} textTransform="uppercase" fontWeight={'normal'} color={colorText} my={4} py={4} fontSize={'sm'}>Vamos juntos criar uma solução inovadora!</Text>
           <Heading color={colorText} py={1}>Olá, eu sou o <span style={{ color: '#5651E5' }}>Gustavo</span>,</Heading>
           <Heading color={colorText} py={1}>Engenheiro de Software</Heading>
@@ -87,21 +90,25 @@ export const Main = () => {
             />
           </Flex>
           {/* Imagem com o efeito de balanço */}
-            <motion.img
-              src={mimoji.src}
-              alt="Logo GustavoNeves"
-              width={300}
-              variants={motionVariants}
-              animate="left" // Iniciar animação para a esquerda
-              transition={{
-                repeat: Infinity, // Repetição infinita
-                repeatType: "mirror", // Inverte a animação no loop
-                duration: 2, // Duração de cada ciclo de animação (2 segundos)
-                ease: "easeInOut", // Curva de animação suave
-              }}
-            />
+          {/* <motion.img
+            src={mimoji.src}
+            alt="Logo GustavoNeves"
+            width={200}
+            variants={motionVariants}
+            animate="right" // Iniciar animação para a esquerda
+            transition={{
+              repeat: Infinity, // Repetição infinita
+              repeatType: "mirror", // Inverte a animação no loop
+              duration: 3, // Duração de cada ciclo de animação (2 segundos)
+              ease: "easeInOut", // Curva de animação suave
+            }}
+          /> */}
+        </Box>
+        <Box position={'absolute'} left={'auto'}>
+        <ScrollDown />
         </Box>
       </Flex >
+      
     </Flex >
   )
 }

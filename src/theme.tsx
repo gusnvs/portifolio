@@ -53,14 +53,28 @@ const theme = extendTheme({
       },
     }),
   },
-  colors: {
-    ofColor: '#FF680B',
-    purpleColor: "#5651E5"
-  },
-  fonts,
-  breakpoints,
-  components: {
-    Button: ButtonStyle
+  semanticTokens: {
+    colors: {
+      ofColor: '#FF680B',
+      purpleColor: "#5651E5",
+      text: {
+        default: 'gray.600',
+        _dark: 'gray.400'
+      },
+      primary: {
+        default: 'red',
+        _dark: 'blue',
+      },
+      background: {
+        default: 'white',
+        _dark: 'gray.800'
+      }
+    },
+    fonts,
+    breakpoints,
+    components: {
+      Button: ButtonStyle
+    }
   }
 })
 

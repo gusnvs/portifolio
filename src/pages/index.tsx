@@ -6,15 +6,19 @@ import {
   ListIcon,
   ListItem,
   Heading,
+  Box,
 } from '@chakra-ui/react'
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
 
-import { Container } from '../components/Container'
 import { DarkModeSwitch } from '../components/DarkModeSwitch'
 
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
 import { Main } from '../components/Main'
+import { About } from '../components/About'
+import { BackToTheTop } from '../components/BackToTheTop'
+import { ParticlesDesign } from '../components/ParticlesDesign'
+import { ScrollDown } from '../components/ScrollDown'
 
 const Index = () => (
   <>
@@ -24,7 +28,12 @@ const Index = () => (
     {/* <DarkModeSwitch /> */}
 
     <Navbar />
+    <BackToTheTop />
     <Main />
+    {/* <ScrollDown /> */}
+
+    <About />
+    {/* <ParticlesDesign /> */}
   </>
 )
 

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Box, Flex, List, ListItem, useMediaQuery, IconButton, Text, useColorModeValue } from "@chakra-ui/react";
+import React, { useState, useEffect } from "react";
+import { Box, Flex, List, ListItem, useMediaQuery, IconButton, Text, useColorModeValue, transition, position } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 import { TiSocialLinkedin } from "react-icons/ti";
@@ -7,7 +7,7 @@ import { VscGithubInverted } from "react-icons/vsc";
 import { BiLogoGmail } from "react-icons/bi";
 import { BsInstagram } from "react-icons/bs";
 import { DarkModeSwitch } from "./DarkModeSwitch";
-import logoGN from "../public/assets/navLogo.png"
+import logoGN from "../public/assets/gusnvs.svg"
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,9 +15,13 @@ import Link from "next/link";
 const Navbar = () => {
 
     const bgColor = useColorModeValue("#ecf0f3", "gray.800");
-    const [isLargerThanMd] = useMediaQuery("(min-width: 768px)");
+    const [isLargerThanMd] = useMediaQuery("(min-width: 835px)");
     const [nav, setNav] = useState(false);
     const MotionBox = motion(Box);
+    const AnimatedListItem = motion(ListItem);
+
+    const [shadow, setShadow] = useState(false);
+    const [navBg, setNavBg] = useState('#ecf0f3');
 
 
     const handleNav = () => {
@@ -28,10 +32,26 @@ const Navbar = () => {
     //     setNav(false);
     // };
 
+
+    useEffect(() => {
+
+        const handleShadow = () => {
+            if(window.scrollY >= 90) {
+                setShadow(true);
+            } else {
+                setShadow(false);
+            }
+        }
+
+        window.addEventListener('scroll', handleShadow);
+
+
+    },[])
+
     return (
-        <Box w={'full'} position={'fixed'} h={'100px'} shadow={'xl'} zIndex={'100'}>
+        <Box bg={'#ecf0f3'} w={'full'} position={'fixed'} h={'100px'} shadow={shadow ? 'xl' : 'none'} transition="ease-in 300ms"  zIndex={'1000'} >
             <Flex justifyContent={'space-between'} alignItems={'center'} w={'full'} h={'full'} px={2}>
-                <Image src={logoGN.src} alt="Logo GustavoNeves" width={70} height={50} />
+                <Image src={logoGN.src} alt="Logo GustavoNeves" width={170} height={50} />
                 {isLargerThanMd ? (
                     <Flex alignItems={'center'} gap={10}>
                         <List
@@ -47,7 +67,7 @@ const Navbar = () => {
                                 <Link href='/'>Home</Link>
                             </ListItem >
                             <ListItem _hover={{ color: "purpleColor", transition: "ease-in 100ms" }} >
-                                <Link href='/'>Sobre mim</Link>
+                                <Link href='/#about'>Sobre mim</Link>
                             </ListItem>
                             <ListItem _hover={{ color: "purpleColor", transition: "ease-in 100ms" }} >
                                 <Link href='/'>Habilidades</Link>
@@ -100,7 +120,7 @@ const Navbar = () => {
                 >
                     <Box>
                         <Flex w="full" alignItems={'center'} justifyContent={'space-between'}  >
-                            <Image src={logoGN.src} alt="Logo GustavoNeves" width={70} height={50} />
+                            <Image src={logoGN.src} alt="Logo GustavoNeves" width={170} height={50}/>
                             <IconButton
                                 as="button"
                                 aria-label="Close"
@@ -186,3 +206,5 @@ const Navbar = () => {
 }
 
 export default Navbar;
+
+

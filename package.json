@@ -9,13 +9,15 @@
     "@chakra-ui/icons": "^2.0.2",
     "@chakra-ui/react": "^2.2.1",
     "@chakra-ui/theme-tools": "^2.0.2",
-    "@emotion/react": "^11.9.0",
+    "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.9.0",
     "framer-motion": "^10.15.0",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.10.1"
+    "react-icons": "^4.10.1",
+    "react-tsparticles": "^2.11.0",
+    "tsparticles": "^2.11.1"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
