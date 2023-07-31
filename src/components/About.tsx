@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Text, Image, Stack, HStack, Button, Heading } from '@chakra-ui/react'
+import { Flex, Text, Image, Stack, HStack, Button, Heading, Box } from '@chakra-ui/react'
 import Link from 'next/link';
 import { CgFileDocument } from 'react-icons/cg';
 import minhaFoto from '../public/assets/eu.jpg'
@@ -7,30 +7,44 @@ import minhaFoto from '../public/assets/eu.jpg'
 export const About = () => {
 
     return (
-        <Flex id='about' w="full" alignItems="center" p={10} >
+        <Flex
+            id='about'
+            w="full"
+            alignItems="center">
             <Stack
                 zIndex={2000}
-                maxW="1240px"
-                borderRadius={'15px'}
+                // maxW="1240px"
+                w={'100%'}
+                // borderRadius={'15px'}
                 bg={'background'}
                 boxShadow={'xl'}
-                p={10}
-                m="auto"
+                p={100}
+                // m="auto"
                 gridGap={8}
                 alignItems="center"
                 direction={{ base: 'column', lg: 'row' }} // Define a direção da Stack: coluna em telas menores e linha em telas maiores (a partir do breakpoint md)
-                _hover={{ boxShadow: "xl", color: "purpleColor", transform: "scale(1.008)" }}
-                transition="ease-in 300ms"
+                // _hover={{ boxShadow: "xl", color: "purpleColor", transform: "scale(1.008)" }}
+                // transition="ease-in 300ms"
+                sx={{
+                    transform: "skewY(-3deg)", // Aplica inclinação por padrão
+                }}
 
 
             >
-                <Flex flexDir="column">
-                    <Text as="p" textTransform="uppercase" fontSize="xl" letterSpacing="widest" color="purpleColor">
-                        Sobre Mim
-                    </Text>
-                    <Text py={4} as="h2" color='text'>
-                        ... ok, mas quem é o Gustavo Neves?
-                    </Text>
+                <Flex
+                    flexDir="column"
+                    sx={{
+                        transform: "skewY(3deg)", // Aplica inclinação por padrão
+                    }}>
+                    <Flex alignItems={'center'} justifyContent={'center'} w={'100%'} flexDir={'column'}>
+                        <Heading fontSize="40px" letterSpacing="widest" color="purpleColor">
+                            Sobre Mim
+                        </Heading>
+                        <Text py={4} as="h2" color='text'>
+                            ... ok, mas quem é o Gustavo Neves?
+                        </Text>
+                    </Flex>
+
                     <Text py={2} textAlign="justify" color='text'>
                         Minha jornada no desenvolvimento de software teve início desde cedo,
                         quando, ainda menino, me despertou a curiosidade sobre a criação dos
@@ -72,6 +86,7 @@ export const About = () => {
                     boxShadow="inset 0 0 0 9px rgba(255, 255, 255, 0.3)"
                     borderRadius="60% 40% 30% 70% / 60% 30% 70% 40%"
                     animation="profile_animate 8s ease-in-out infinite 1s"
+
                 />
             </Stack>
         </Flex>

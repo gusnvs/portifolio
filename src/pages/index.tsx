@@ -27,13 +27,14 @@ const Index = () => (
     </Head>
     {/* <DarkModeSwitch /> */}
 
+
     <Navbar />
+    <ParticlesDesign />
     <BackToTheTop />
     <Main />
     {/* <ScrollDown /> */}
 
     <About />
-    {/* <ParticlesDesign /> */}
   </>
 )
 

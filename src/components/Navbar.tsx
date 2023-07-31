@@ -49,7 +49,7 @@ const Navbar = () => {
     },[])
 
     return (
-        <Box bg={'#ecf0f3'} w={'full'} position={'fixed'} h={'100px'} shadow={shadow ? 'xl' : 'none'} transition="ease-in 300ms"  zIndex={'1000'} >
+        <Box bg={'#ecf0f3'} w={'full'} position={'fixed'} h={'100px'} shadow={shadow ? 'xl' : 'none'} transition="ease-in 300ms"  zIndex={10000} >
             <Flex justifyContent={'space-between'} alignItems={'center'} w={'full'} h={'full'} px={2}>
                 <Image src={logoGN.src} alt="Logo GustavoNeves" width={170} height={50} />
                 {isLargerThanMd ? (
