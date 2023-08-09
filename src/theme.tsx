@@ -73,7 +73,19 @@ const theme = extendTheme({
     fonts,
     breakpoints,
     components: {
-      Button: ButtonStyle
+      Button: {
+        greenButton: {
+          bg: 'green.500',
+          color: 'white',
+          _hover: { bg: 'green.600' },
+          _active: { bg: 'green.700' },
+          _dark: {
+            bg: 'green.400',
+            _hover: { bg: 'green.600' },
+            _active: { bg: 'green.700' },
+          }
+        },
+      }
     }
   }
 })

@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { ParticlesDesign } from './ParticlesDesign';
 import { ScrollDown } from './ScrollDown';
 
+
 export const Main = () => {
 
   const colorText = useColorModeValue("gray.600", "gray.400");
@@ -106,7 +107,6 @@ export const Main = () => {
           </Box>
           <ScrollDown />
         </Flex >
-
       </Flex >
     </>
   )

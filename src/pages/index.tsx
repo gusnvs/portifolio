@@ -19,22 +19,20 @@ import { About } from '../components/About'
 import { BackToTheTop } from '../components/BackToTheTop'
 import { ParticlesDesign } from '../components/ParticlesDesign'
 import { ScrollDown } from '../components/ScrollDown'
+import { Skills } from '../components/Skills'
 
 const Index = () => (
   <>
     <Head>
       <title>Gustavo Neves | Front-End Developer</title>
     </Head>
-    {/* <DarkModeSwitch /> */}
-
-
     <Navbar />
     <ParticlesDesign />
     <BackToTheTop />
     <Main />
-    {/* <ScrollDown /> */}
-
     <About />
+    <Skills />
+
   </>
 )
 

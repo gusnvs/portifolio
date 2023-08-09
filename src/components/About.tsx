@@ -3,14 +3,19 @@ import { Flex, Text, Image, Stack, HStack, Button, Heading, Box } from '@chakra-
 import Link from 'next/link';
 import { CgFileDocument } from 'react-icons/cg';
 import minhaFoto from '../public/assets/eu.jpg'
+import { Download } from '../components/Download'
+
+
 
 export const About = () => {
 
     return (
-        <Flex
+        <>
+            <Flex
             id='about'
             w="full"
-            alignItems="center">
+            alignItems="center"
+            >
             <Stack
                 zIndex={2000}
                 // maxW="1240px"
@@ -69,14 +74,7 @@ export const About = () => {
                         oportunidade de aprendizado, e estou ansioso para continuar crescendo e aprendendo
                         com os desafios que o futuro me reserva.
                     </Text>
-                    <HStack w={'full'} alignItems={'center'} justifyContent={'flex-start'} py={5}>
-                        <Button rightIcon={<CgFileDocument />} bg={'purpleColor'} color={'white'} >
-                            Download CV
-                        </Button>
-                        <Button colorScheme='purple' variant='outline'>
-                            Projetos
-                        </Button>
-                    </HStack>
+
                 </Flex>
                 <Image
                     src={minhaFoto.src}
@@ -90,5 +88,9 @@ export const About = () => {
                 />
             </Stack>
         </Flex>
+        <Download />
+        
+        </>
+
     );
 }
